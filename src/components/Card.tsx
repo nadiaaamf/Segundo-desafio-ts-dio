@@ -1,15 +1,21 @@
-interface ICard {
-  id: number,
-  paragraph: string,
-  details: string
-}
+import { Box, Center, Input } from "@chakra-ui/react"
+import { login } from "../services/login"
+import { ButtonComponent } from "./Button/ButtonComponent"
 
-export const Card = ({ id, paragraph, details }: ICard) => {
+export const Card = () => {
   return(
-    <div>
-      <h1>Card {id}</h1>
-      <p>{paragraph}</p>
-      <p>{details}</p>
-    </div>
+    <Box backgroundColor="#FFFFFF" borderRadius="25px" padding="15px">
+      <Center>
+        <h1>Faça o login</h1>
+        </Center>
+
+        <Input placeholder="email" marginTop="10px"/>
+        <Input placeholder="password" marginTop="10px"/>
+
+        <Center>
+          <ButtonComponent onClick={login} />
+        </Center>
+        </Box>
+      
   )
 }
